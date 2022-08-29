@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+
 #define TRUE		1
 #define FALSE		0
 #define ASCIILEN	128
@@ -7,13 +9,18 @@
 #define STEP		20
 #define FAHRSUB		32
 #define FAHRMUL		(5.0/9.0)
+#define MAXLINE		1000
 
-int Ex8();
-int Ex9();
-int Ex10();
-int Ex14();
-int Ex15();
+
+void Ex8();
+void Ex9();
+void Ex10();
+void Ex14();
+void Ex15();
 float fahrCalc(int x);
+void Ex19(char* s, int n);
+int inpline(char s[]);
+
 
 /* Chapter 1:
 	* Exercise 8
@@ -27,11 +34,17 @@ int main()
 	//Ex10();
 	//Ex14();
 	//Ex15();
+
+	char string[MAXLINE];
+	while (1)
+	{
+		Ex19(string, inpline(string));
+	}
 }
 
 
 /* Ex8: Count all tab characters, Blank spaces and newline characters and print them.*/
-int Ex8()
+void Ex8()
 {
 	int tabCount = 0, nlCount = 0, blankCount = 0, c;
 
@@ -57,7 +70,7 @@ int Ex8()
 
 
 /* Ex9: replaces all continous blank space between words with a singular space.*/
-int Ex9()
+void Ex9()
 {
 	int blankFlag = FALSE, c;
 
@@ -80,7 +93,7 @@ int Ex9()
 
 
 /* Ex10: Replace all tab characters '    ' with \t, all backslashes '\' with \\ and all backspaces with \b.*/
-int Ex10()
+void Ex10()
 {
 	int c;
 
@@ -107,7 +120,7 @@ int Ex10()
 
 
 /* Ex14: Counts the amount of times a character appears in a given input.*/
-int Ex14()
+void Ex14()
 {
 	int c;
 	int nLetter[ASCIILEN];
@@ -133,7 +146,7 @@ int Ex14()
 
 
 /* Ex15: Calculates the different temprature degree equivalent in steps of 20 using a function.*/
-int Ex15()
+void Ex15()
 {
 	int fahr;
 
@@ -141,7 +154,43 @@ int Ex15()
 		printf("%3d %6.1f\n", fahr, fahrCalc(fahr));
 }
 
+
+/* fahrCalc: Turns fahrenheit temprature degrees into Celsius.*/
 float fahrCalc(int temp)
 {
 	return FAHRMUL * (temp - FAHRSUB);
+}
+
+
+/* Ex19: Reverses a given string.*/
+void Ex19(char st[], int len)
+{
+	int i;
+	char rev[len];
+
+	for (i = len - 2 ; i >= 0 ; --i)
+	{
+		rev[(len - i - 2)] = st[i];
+	}
+	rev[len-1] = '\0'; 
+	printf("\n%s : %s\n", st, rev);
+}
+
+
+/* inpline: read a line into s and return the pointer to s*/
+int inpline(char s[])
+{
+	int c, i;
+
+	for (i = 0 ; i < MAXLINE - 1 && (c = getchar()) != EOF && c != '\n' ; ++i)
+		s[i] = c;
+	if (c == '\n')
+	{
+		s[i] = '\0';
+		++i;
+	} 
+	else
+		s[i] = '\0';
+
+	return i;
 }
