@@ -3,20 +3,49 @@
 
 ##### 1.
 ```
-החיה הכי טובה בעולם היא פלמינגו!
-1. הרגליים הארוכות שלה והברכיים ההפוכות נותנות לה את היכולת לעשות קיקפליפ מטורףףףףף על הסקייטבורד!
-2. פלמינגו הוא ישראלי צבר אסלי ולא שותה שניצל
-3. פלמינגו לא אוכל במקדונלדס.
+The best animal in the world is Falemingo!
+
+1. It's unique leg shape allows it to do a sick kickflip on a skate.
+2. The Flamingo does not drink a Shnitzel.
+3. The Flamingo does not dine at Mickie Deez (nuts). 
 ```
 
 ##### 4.
 ```
-לולאה היא דרך לחזור על בלוק חצוץ של קוד כמות פעמים מסויימת, עד השגת תנאי מסויים או כמות פעמים נתונה. לולאות משומשות בשביל לעבד נתונים בעזרת אותן שורות קוד כמות פעמים רבה או בשביל לספור.
-ריקורסיה היא קריאה חוזרת ומקוננת של פונקציה מתוך עצמה עם אותם נתונים בכדי להריץ את אותן שורות קוד על הנתונים כמו לולאה. ההבדל נובע מהדרך השונה שבהן שתיהן עובדות, בעיקר עם זיכרון.
+A loop in prgramming language is a block of code which repeats itself until\as long as a given statement becomes\is true.
+Loops are used to process information using the same code multiple times or to count objects.
 
-1. לולאה תשתמש באותם עצמים בזיכרון כיוון שה-variable space סטאטי ולא משתנה (לא נכנסים לפונקציות אחרות ונשארים באותו בלוק של קוד עד היציאה מהלולאה) בעוד שבריקורסיה המחשב יצור לנו מבני זיכרון חדשים לכל פונקציה שנקראת מה שיכול להעיק על הזיכרון אם לא זהירים.
-2. ריקורסיה אינה ברורה ממבט ראשון ודורשת זמן להבנת המורכבות שלה ואיך שהיא פועלת, לולאות גם יכולות לסבול מהחסרון הזה אבל ריקורסיה הרבה יותר רגישה בנושא.
-3. ריקורסיה יותר איטית מלולאה.
+A recusion in programming language is the calling of a function from whithin itself, to perform the same operation on a set of information.
+The difference between them comes from the way they are both manifested:
 
-אך ישנן פעמים בהן יהיה מסובך מדי לכתוב את הקוד בלולאה או אפילו בלתי אפשרי ולכן נשתמש בריקורסיה.
+1.
+In a loop the memory structures that are used to affect the processed information remain in the same variable space. We do not call another function and we stay inside the loop.
+In a recursive loop the machine creates new memory structures for each function that is being called (Constants, Parameters and such) and thosre are just being returned.
+This means that recursive functions can put a heavy strain on the memory of the computer if not used correctly.
+
+2.
+Recursive functions are very complicated in their nature, and may be hard to understand or even contruct. However the complexity comes from the flexibility which the functions presume.
+Loops retains a form of simplicity in their execution but they also can suffer from over-complexity.
+
+3.
+Recursive functions are slower than loops in execution.
+```
+
+##### 8.
+```
+.pyc files are the intermediate code files that the python interperter compiles.
+The python Interperter works like this:
+
+				+-------------------------------------------------------------------+
+				|							[Interperter]							|
+				|	+----------+    +-----------------+    +-----------------+		|
+Source Code ->	|	| Compiler | -> | Byte Code (pyc) | -> | Virtual Machine |		|  -> Execution
+				|	+----------+    +-----------------+    +-----------------+		|
+				|																	|
+				+-------------------------------------------------------------------+
+				
+After running the code ther interperter runs the source code through a compiler which translate our source Python code
+into a bytcode which is machine independant (universal), efficeint and intermidiary that is then used to run using a virtual machine inside the interperter.
+
+The pyc format is exactly that, the intermidiate version of the code. It can be uncomplied and compiled by hand.
 ```
