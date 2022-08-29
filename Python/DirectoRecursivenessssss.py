@@ -10,7 +10,7 @@
 import os
 
 # Constants
-INDENT  = "└──"
+INDENT  = "--- "
 
 def treeDir(path, depth = 0):
 
@@ -19,18 +19,22 @@ def treeDir(path, depth = 0):
         print("[ERROR] Given path is not a directory.")
         return
 
+    # Get Directory children.
     children = os.listdir(path)
     
     for entity in children:
+
+        # Print item with identation.
         print(f"{INDENT * depth}{entity}")
-        
+
+        # If item is directory print all children and repeat.
         if os.path.isdir(os.path.join(path, entity)):
             treeDir(os.path.join(path, entity), depth + 1)
             
             
 
 def main():
-    treeDir(r"C:\Users\Matrix\Desktop\TestDir")
+    pass
 
 if __name__ == "__main__":
     main()
