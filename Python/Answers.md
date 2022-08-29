@@ -29,6 +29,9 @@ Loops retains a form of simplicity in their execution but they also can suffer f
 
 3.
 Recursive functions are slower than loops in execution.
+
+Due tot he memory strains and the complexity it is extremely important to make sure our exit statement is 100% correct, otherwise we would end up with an infinite loop that could exhaust
+the prgrams memory.
 ```
 
 ##### 8.
