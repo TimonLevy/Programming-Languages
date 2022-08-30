@@ -8,7 +8,7 @@
 In the solution above we have a code snipet and it's execution's results.
 The code recieves a char or a string and prints 0 if they are not equal to EOF or 1 if they are.
 
-In the first input we see 'A' followed by two zeros, that is because the input is actually 'A\n'. The program recognizes that
+In the first input we see 'A' followed by two zeros, that is because the input is actually "A\n". The program recognizes that
 and prints two zeros because neither 'A' nor '\n' are EOF.
 
 In the second attempt we see a black line, that s because the input was '\n', which is not an EOF char so it printed 0 once.
