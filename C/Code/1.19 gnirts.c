@@ -5,7 +5,7 @@
 #define MAXLINE		1000
 
 void gnirtS(char* s, int n);
-int InpLine(char s[]);
+int inpLine(char s[]);
 
 
 int main()
@@ -44,8 +44,8 @@ void gnirtS(char st[], int len)
 }
 
 
-/* InpLine: read a line into s and return the pointer to s*/
-int InpLine(char s[])
+/* inpLine: read a line into s and return the pointer to s*/
+int inpLine(char s[])
 {
 	int c, i;
 

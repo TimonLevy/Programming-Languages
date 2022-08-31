@@ -1,16 +1,16 @@
 #include <stdio.h>
 
-void StarGazer();
+void starGazer();
 
 
 int main()
 {
-	StarGazer();
+	starGazer();
 }
 
 
-/* Ex8: Count all tab characters, Blank spaces and newline characters and print them.*/
-void StarGazer()
+/* starGazer: Count all tab characters, Blank spaces and newline characters and print them.*/
+void starGazer()
 {
 	int tabCount, nlCount, blankCount, c;
 	tabCount = nlCount = blankCount = 0;

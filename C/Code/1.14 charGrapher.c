@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-void CharGrapher();
+void charGrapher();
 
 int main()
 {
-	CharGrapher();
+	charGrapher();
 }
 
 
-/* CharGrapher: Counts the amount of times a character appears in a given input.*/
-void CharGrapher()
+/* charGrapher: Counts the amount of times a character appears in a given input.*/
+void charGrapher()
 {
 	int c;
 	int nLetter[ASCIILEN];

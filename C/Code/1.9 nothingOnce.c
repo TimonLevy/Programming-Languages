@@ -1,16 +1,16 @@
 #include <stdio.h>
 #define FALSE		0
 
-void NothingOnce();
+void nothingOnce();
 
 int main()
 {
-	NothingOnce();
+	nothingOnce();
 }
 
 
-/* NothingOnce: replaces all continous blank space between words with a singular space.*/
-void NothingOnce()
+/* nothingOnce: replaces all continous blank space between words with a singular space.*/
+void nothingOnce()
 {
 	int blankFlag = FALSE, c;
 

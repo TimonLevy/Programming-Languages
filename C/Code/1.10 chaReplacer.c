@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-void ChaReplacer();
+void chaReplacer();
 
 int main()
 {
-	ChaReplacer();
+	chaReplacer();
 }
 
 
-/* ChaReplacer: Replace all tab characters '    ' with \t, all backslashes '\' with \\ and all backspaces with \b.*/
-void ChaReplacer()
+/* chaReplacer: Replace all tab characters '    ' with \t, all backslashes '\' with \\ and all backspaces with \b.*/
+void chaReplacer()
 {
 	int c;
 

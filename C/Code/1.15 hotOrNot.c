@@ -5,7 +5,7 @@
 #define FAHRSUB		32
 #define FAHRMUL		(5.0/9.0)
 
-void HotOrNot();
+void hotOrNot();
 float fahrCalc();
 
 int main()
@@ -13,8 +13,8 @@ int main()
 	HotOrNot();
 }
 
-/* HotOrNot: Calculates the different temprature degree equivalent in steps of 20 using a function.*/
-void HotOrNot()
+/* hotOrNot: Calculates the different temprature degree equivalent in steps of 20 using a function.*/
+void hotOrNot()
 {
 	int fahr;
 
