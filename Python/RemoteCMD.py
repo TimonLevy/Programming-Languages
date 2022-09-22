@@ -8,6 +8,12 @@
 # and returns the output.
 # =========================== #
 
+"""
+* The program is written great but it fails when the attacker wants to change a directory plz fix ♥
+* You have an unused constat "IP".
+* Really loved the command line.
+"""
+
 # Modules
 import socket
 import subprocess as sub
