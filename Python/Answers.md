@@ -1,6 +1,8 @@
 # Sfot Tichnut
 ## __Answers__
 
+""" Those are not legitment answears """
+
 ##### 1.
 ```
 The best animal in the world is Falemingo!
