@@ -6,6 +6,12 @@
 # ===========================
 # This program prints A directories children in a tree.
 
+"""
+* Great program!
+* Your program doesn't run.
+"""
+
+
 # Modules
 import os
 
