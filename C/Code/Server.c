@@ -20,11 +20,12 @@
 #include	<string.h>
 #include	<stdlib.h>
 #include	<WinSock2.h>
-#include	<ws2tcpip.h>
+#include	<conio.h>
 
 #define		SUCCESS			1
 #define		FAILURE			0
 #define		xalloc(type)	(type *) malloc(sizeof(type))	// Universal memory allocation macro.
+#define		clrscr			system("cls");
 
 #define		DMUL			5		// Multipler value used for the amount of dashes in the sub-arrow.
 #define 	BUFFLEN			255		// The size of the buffer for recieving messages from clients.
@@ -61,10 +62,9 @@ void vprint(vptr a, int b);
 void processRequest(SOCKET a);
 void arrow(int a);
 
-
 int main(int argc, char* argv[])
 {
-	clrscr();
+	clrscr;
 
 	// Initialize the windows socketing API.
 	if((WSAStartup(MAKEWORD(2,2), &ws)) != 0)
@@ -129,7 +129,7 @@ int main(int argc, char* argv[])
 
 	while (1)
 	{
-		clrscr();
+		clrscr;
 		
 		FD_ZERO(&fr);
 		FD_ZERO(&fw);

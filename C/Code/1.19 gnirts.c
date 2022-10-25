@@ -10,7 +10,7 @@
 #define ASCIILEN	128
 #define MAXLINE		1000
 
-void gnirtS(char* s, int n);
+void gnirtS(char* s);
 int inpLine(char s[]);
 
 
@@ -27,7 +27,8 @@ int main()
 		printf("This program reverse and input string.\n >  ");
 		/* Get line from input using [Inpline()] into [string].
 		   Input both string and string length into [gnirtS()]. */
-		gnirtS(string, InpLine(string));
+		inpLine(string);
+		gnirtS(string);
 	}
 }
 

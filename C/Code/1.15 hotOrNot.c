@@ -10,15 +10,15 @@
 #define		FAHRCALC(x)		(5.0/9.0) * (x - 32)	// Calculate the fahrenheit equivilant to the given cellcius degree.
 
 void hotOrNot();
-float fahrCalc();
+float fahrCalc(int a);
 
 int main()
 {
-	HotOrNot();
+	hotOrNot();
 }
 
 /* hotOrNot: Calculates the different temprature degree equivalent in steps of 20 using a function.*/
-int main()
+void hotOrNot()
 {
 	int fahr;
 
@@ -27,7 +27,7 @@ int main()
 }
 
 /* fahrCalc: convert tepratures.*/
-int fahrCalc(int temp)
+float fahrCalc(int temp)
 {
 	return FAHRCALC(temp);
 }

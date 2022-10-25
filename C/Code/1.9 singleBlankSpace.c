@@ -4,7 +4,8 @@
 //	replaces all continous blank space between words with a single space.
 
 #include <stdio.h>
-#define FALSE		0
+#define 	FALSE		0
+#define		TRUE		1
 
 int main()
 {

@@ -3,7 +3,9 @@
 
 //	Counts the amount of times a character appears in a given input.
 
-#include <stdio.h>
+#include 	<stdio.h>
+
+#define		ASCIILEN	128
 
 int main()
 {

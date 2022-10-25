@@ -31,7 +31,6 @@ void getFloat(float *pn)
 	if (!isdigit(c) && c != EOF && c!= '+' && c != '-' && c!= '.')
 	{
 		ungetch(c);
-		return 0;
 	}
 
 	sign = (c == '-') ? -1 : 1;
