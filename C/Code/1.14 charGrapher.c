@@ -1,24 +1,19 @@
-#include <stdio.h>
+//	charGrapher.c
+//	Programmer:	Daniel L.
 
-void charGrapher();
+//	Counts the amount of times a character appears in a given input.
+
+#include <stdio.h>
 
 int main()
 {
-	charGrapher();
-}
 
-
-/* charGrapher: Counts the amount of times a character appears in a given input.*/
-void charGrapher()
-{
+	// Create an array to count all the letter occurances.
 	int c;
-	int nLetter[ASCIILEN];
+	int nLetter[ASCIILEN] = {0};
 
-	// Reset the array.
-	for (int i = 0 ; i < ASCIILEN ; ++i)
-	{
-		nLetter[i] = 0;
-	}
+	printf("This program counts the amount of times each letter has been submitted and shows a histogram of the tally.\n");
+	printf(" >>  ");
 
 	// Count all the letters.
 	while ((c = getchar()) != EOF)

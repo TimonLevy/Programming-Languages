@@ -1,3 +1,8 @@
+//	invertedRabbithole.c
+//	Programmer:	Daniel L.
+
+//	This program recieves a string and prints it in reverse using recursion.
+
 #include <stdio.h>
 #include <string.h>
 #define		MAXLINE 100

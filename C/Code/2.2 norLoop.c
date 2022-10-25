@@ -1,3 +1,8 @@
+//	norLoop.c
+//	Programmer:	Daniel L.
+
+//	This program get a new line and rints it.
+
 #include <stdio.h>
 #define MAXLINE		1000
 

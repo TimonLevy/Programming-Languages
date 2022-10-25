@@ -1,3 +1,10 @@
+//	bitnanaROTAT.c
+//	Programmer:	Daniel L.
+
+//	This programs rotates the bit of a hard-coded interger n times and 
+//	prints the outcome.
+//	https://www.youtube.com/watch?v=YGXCnZMGa6M
+
 #include <stdio.h>
 
 unsigned int getbits(unsigned int x, int p, int n);

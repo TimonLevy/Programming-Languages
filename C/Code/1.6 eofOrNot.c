@@ -1,6 +1,10 @@
+//	eofOrNot.c
+//	Programmer:	Daniel L.
+//	
+//	This program prints wether a character in a string is EOF or not.
+
 #include <stdio.h>
 
-/* This program prints wether a character in a string is EOF or not. */
 main()
 {
 	int c;

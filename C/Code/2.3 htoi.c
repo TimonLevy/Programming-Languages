@@ -1,3 +1,8 @@
+//	htoi.c
+//	Programmer: Daniel L.
+
+//	This program converts a hard-coded hex number to an interger and prints it.
+
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
@@ -21,6 +26,7 @@ int main()
 }
 
 
+/* htoi: hex to int, this functions converts hex numbers to interger. */
 int htoi(char s[])
 {
 	int i, j, sum;

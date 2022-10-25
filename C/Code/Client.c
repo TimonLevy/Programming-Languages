@@ -1,3 +1,9 @@
+//	Client.c
+//	Programmer:	Daniel L.
+
+//	This program sends both given arguments to a socket on a harcoded IP and PORT.
+//	* Pairs with the Server program.
+
 #include	<stdio.h>
 #include	<string.h>
 #include	<stdlib.h>
@@ -65,8 +71,10 @@ int main(int argc, char *argv[])
 		printf("[+] Socket connected to server successfuly.\n");
 	}
 	
+	// Delay to let the server ready the socket for reading.
 	Sleep(500);
 
+	// Send both first and second arguments.
 	send(newSocket, argv[1], strlen(argv[1]), 0);
 	send(newSocket, argv[2], strlen(argv[2]), 0);
 }

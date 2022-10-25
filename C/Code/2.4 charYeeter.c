@@ -1,6 +1,10 @@
+//	charYeeter.c
+//	Programmer:	Daniel L.
+
+//	This program takes two hard-coded strings, subsitutes them and prints them.
+
 #include <stdio.h>
 #include <string.h>
-
 
 void charYeeter(char a[], char b[]);
 

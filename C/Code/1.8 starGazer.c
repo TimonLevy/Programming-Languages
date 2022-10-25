@@ -1,16 +1,11 @@
+//	starGazer.c
+//	Programmer:	Daniel L.
+//
+//	Count all tab characters, Blank spaces and newline characters and print them.*/
+
 #include <stdio.h>
 
-void starGazer();
-
-
 int main()
-{
-	starGazer();
-}
-
-
-/* starGazer: Count all tab characters, Blank spaces and newline characters and print them.*/
-void starGazer()
 {
 	int tabCount, nlCount, blankCount, c;
 	tabCount = nlCount = blankCount = 0;

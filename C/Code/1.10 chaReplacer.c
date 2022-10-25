@@ -1,17 +1,16 @@
-#include <stdio.h>
+//	chaReplacer.c
+//	Programmer: Daniel L.
 
-void chaReplacer();
+//	Replace all tab characters '    ' with \t, all backslashes '\' with \\ and all backspaces with \b.
+
+#include <stdio.h>
 
 int main()
 {
-	chaReplacer();
-}
-
-
-/* chaReplacer: Replace all tab characters '    ' with \t, all backslashes '\' with \\ and all backspaces with \b.*/
-void chaReplacer()
-{
 	int c;
+
+	printf("This program replaces all 'tabs', 'backslashes' and 'backspaces' with \\t, \\\\ and \\b.\n");
+	printf("Enter input: ");
 
 	// Continously get input until interrupt.
 	while ((c = getchar()) != EOF)

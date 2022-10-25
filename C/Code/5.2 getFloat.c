@@ -1,21 +1,27 @@
+//	getFloat.c
+//	Programmer:	Daniel L.
+
+//	This program gets a float value from input and prints it.
+
 #include <ctype.h>
 #include <stdio.h>
 
 int getch(void);
 void ungetch(int);
-float getFloat(float*);
+void getFloat(float*);
 
 int main()
 {
-	float placeholder = 0;
-	getFloat(&placeholder);
-	printf("%f\n", placeholder);
+	float flt;
+	getFloat(&flt);
+	printf("%f\n", flt);
 }
 
-/* getFloat: get the next floaf from input into *pn. */
-float getFloat(float *pn)
+/* getFloat: get the next float from input into *pn. */
+void getFloat(float *pn)
 {
 	int c, sign;
+	*pn = 0;
 
 	// Get rid of whitespace.
 	while (isspace(c = getch()))
@@ -52,5 +58,4 @@ float getFloat(float *pn)
 	}
 	else if (c != EOF)
 		ungetch(c);
-	return c;
 } 

@@ -1,16 +1,12 @@
+//	nothingOnce.c
+//	Programmer:	Daniel L.
+
+//	replaces all continous blank space between words with a single space.
+
 #include <stdio.h>
 #define FALSE		0
 
-void nothingOnce();
-
 int main()
-{
-	nothingOnce();
-}
-
-
-/* nothingOnce: replaces all continous blank space between words with a singular space.*/
-void nothingOnce()
 {
 	int blankFlag = FALSE, c;
 
