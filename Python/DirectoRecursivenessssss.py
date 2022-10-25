@@ -40,7 +40,9 @@ def treeDir(path, depth = 0):
             
 
 def main():
-    pass
+
+    path = input("Please input a path to a directory\n  - ")
+    treeDir(path)
 
 if __name__ == "__main__":
     main()

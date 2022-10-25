@@ -41,18 +41,18 @@ the prgrams memory.
 .pyc files are the intermediate code files that the python interperter compiles.
 The python Interperter works like this:
 
-	                            Source Code
-	                                ||
-	                                \/
+	                             Source Code
+	                                 ||
+	                                 \/
 	+-------------------------------------------------------------------+
 	|                           [Interperter]                           |
 	|    +----------+    +-----------------+    +-----------------+     |
 	|    | Compiler | -> | Byte Code (pyc) | -> | Virtual Machine |     |
 	|    +----------+    +-----------------+    +-----------------+     |
 	+-------------------------------------------------------------------+
-	                                ||
-	                                \/
-	                             Execution
+	                                 ||
+	                                 \/
+	                              Execution
 								
 After running the code ther interperter runs the source code through a compiler which translate our source Python code
 into a bytcode which is machine independant (universal), efficeint and intermidiary that is then used to run using a virtual machine inside the interperter.
