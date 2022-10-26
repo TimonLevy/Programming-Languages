@@ -7,7 +7,6 @@
 #include <string.h>
 
 #define TRUE 		1
-#define ASCIILEN	128
 #define MAXLINE		1000
 
 void gnirtS(char* s);
