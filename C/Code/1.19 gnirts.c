@@ -7,7 +7,6 @@
 #include <string.h>
 
 #define TRUE 		1
-#define ASCIILEN	128
 #define MAXLINE		1000
 
 void gnirtS(char* s);
@@ -42,13 +41,13 @@ void gnirtS(char st[])
 	char rev[len];
 
 	// Run over the param string in reverse order and input it into [rev].
-	for (i = len - 2 ; i >= 0 ; --i)
+	for (i = len - 1 ; i >= 0 ; --i)
 	{
-		rev[(len - i - 2)] = st[i];
+		rev[(len - i - 1)] = st[i];
 	}
 
 	// Add a Null Terminator into [rev] and print it.
-	rev[len-1] = '\0'; 
+	rev[len] = '\0'; 
 	printf("\n%s | %s\n", st, rev);
 }
 
