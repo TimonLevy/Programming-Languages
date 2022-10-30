@@ -6,6 +6,11 @@
 #include <ctype.h>
 #include <stdio.h>
 
+/*Noam's comments
+getfloat doesn't return anything.
+and program doesn't get inputs like getint is.
+*/
+
 int getch(void);
 void ungetch(int);
 void getFloat(float*);
