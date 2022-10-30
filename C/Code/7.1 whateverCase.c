@@ -7,6 +7,10 @@
 #include <stdio.h>
 #include <string.h>
 
+/*
+argv[0] is the path of the executable, the assignment was to take the argv[1] and lower it or upper it depending on how much there lower or upper in argv[0]
+*/
+
 #define UPPER		"upper"
 #define	LOWER		"lower"
 #define HELP		"/?"
