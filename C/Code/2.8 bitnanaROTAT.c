@@ -7,6 +7,16 @@
 
 #include <stdio.h>
 
+/*Noam's comments:
+Great documention.
+Your implemtation of rightrot doesn't work correctly it suppose to like this:
+8 rotated right 4 times is 8
+and
+8 rotated right 8 times is 8
+means that 8 is 1000 so 4 times is 0100,0010,0001,1000
+means that 8 is 1000 so 8 times is 0100,0010,0001,1000,0100,0010,0001,1000
+*/
+
 unsigned int getbits(unsigned int x, int p, int n);
 int rightrot(int s, int n);
 
