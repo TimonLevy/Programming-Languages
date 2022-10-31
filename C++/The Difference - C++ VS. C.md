@@ -8,3 +8,5 @@
 |3. __Memory management__| Manual memory allocation to structs & Garbage collector. | Manual memory allocation to structs & NO Garbage collector. |
 
 In essence C is almost a subset of C++, meaning C++ almost contains C inside of it. This also means that almost any C code will be able to compile in a  C++ compiler with little to no change.
+
+# C++: Standard Libraries, IO-Streams & Namespaces
