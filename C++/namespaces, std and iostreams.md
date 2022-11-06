@@ -1,4 +1,4 @@
-# NAMESPACES, STD & IOSTREAMS: WHAT ARE THEY?
+# NAMESPACES, STL & IOSTREAMS: WHAT ARE THEY?
 
 ### Namespaces
 In **C++** it is possible to have multiple *variables*, *functions* and *type names* that use the same name but have different meaning to al of them, how is that possible? It's actually very simple, the variable's value is relative to a namespace.
@@ -27,3 +27,17 @@ or you may use specific data from the namespace using the **using** directive:
 	using NAME_OF_NAMESPACE::NAME_OF_CLASS;
 	NAME_OF_CLASS classObj;
 	classObj.Func1();
+
+### The C++ Standard Library
+The C++ standard library contains a bunch of classes, data structures and function (written in c++) that extend the usability and functionality of the language. It is also a product of many standardization procedures. The standard library is used a lot simply because it contains most basic and common data structure functions and classes like: time calculations, arrays, error handling and strings.
+
+For references on the contents of the library you may refer [here](https://en.cppreference.com/w/cpp/header).
+
+### IO-Streams
+iostreams are the input and output streams that your machine uses (io = input output), a stream is a sequence of characters read from or written to an IO device (like a keyboard or screen). By default C++ doesn't provide any io operations, instead you must use the **iostream** library included in the standard library.
+
+The library is contains different types of streams:
+* **istream** - An **input** stream, this stream gets input from an IO device like a keyboard, mouse, Joystick, Scanner or a camera.
+* **ostream** - An  **output** stream, this stream is used to end output to an IO device like a screen or a printer. 
+
+However there are other io stream in C++ language like the **fstream**, This stream is used for **operating on files**, it can read and write to files. Other streams like *ofstream* and *ifstream* exist to fulfill a single purpose.
