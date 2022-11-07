@@ -24,25 +24,27 @@ int main()
 {
 	int num = 991;
 
-	printf("%d\n", rightrot(num, 5));
+	printf("%d\n", rightrot(num, 16));
 }
 
 /* rightrot: rotate the bits in the number to the right by [n]. */
 int rightrot(int s, int n)
 {
-	int j, i;
-	j = s;
+	int m, j, i;
 
 	// Count the amount of bits.
-	for (i = 1 ; (j = j >> 1) > 0 ; i++)
+	for (i = 1, j = s ; (j = j >> 1) > 0 ; i++)
 		;
+	
+	// Get the amount of effetive rotation, that is dismiss all full rotations.
+	m = (i > n ? n : (n % i));
 
-	// Get the [n]th bit and all the following and space them out to fit the rest behind.
-	j = getbits(s, (n - 1), n);
-	j = j << (i - n);
+	// Get the [m]th bit and all the following and space them out to fit the rest behind.
+	j = getbits(s, (m - 1), m);
+	j = j << (i - m);
 	
 	// Put the leftover bits behind the left-shifted "right" bits.
-	return (j | (s >> n));
+	return (j | (s >> m));
 }
 
 

@@ -1,63 +1,64 @@
 //	whateverCase.c
 //	Programmer:	Daniel L.
 
-//	This program converts and giver argument string's case based on a given argument and prints it.
+//	This program converts and giver argument string's case based on the amount of capital/lowercase letters in the invokation and prints it.
 //	Actually realy cool.
 
 #include <stdio.h>
 #include <string.h>
 
-/*
-argv[0] is the path of the executable, the assignment was to take the argv[1] and lower it or upper it depending on how much there lower or upper in argv[0]
-*/
-
-#define UPPER		"upper"
-#define	LOWER		"lower"
+#define	STRING		1
 #define HELP		"/?"
-#define	HELP2		"help"
-#define	CASE		1
-#define	STRING		2
-#define	MINARGS		3
+#define NOARGS		1
 #define	isUpper(x)	(x >= 'A' && x <= 'Z' ? 1 : 0)
-#define	isLower(x)	(x >= 'a' && x <= 'z' ? 1 : 0)
-#define	DIFF		('a' - 'A')
-
+#define	DIFF		('A' - 'a')
 
 int main(int argc, char* argv[])
 {
+	
 	// Help prompt.
-	if (strcmp(argv[CASE], HELP) == 0 || strcmp(argv[CASE], HELP2) == 0)
+	if (strcmp(argv[STRING], HELP) == 0)
 	{
-		printf("Convert string to given case.\n\nCASE [case] string\n\n\tcase - either 'upper' or 'lower'. (case sensitive)\n\n");
+		printf("Convert string to case based on the amount of capital or lowercase letters in the invokation.\n\nEXAMPLE:\n\tuppercase:\tWHATEverCase string\n\tlowercase:\twhatevERcasE string\n\n");
 		return 1;
 	}
-	// Check that all arguments were given.
-	if (argc < MINARGS)
+	
+	// return if no arguments are given.
+	if	(argc == NOARGS)
 	{
-		printf("Missing argmuents.");
+		printf("missing arguments.\n\n");
 		return 0;
 	}
-
-	int c;
-
-	// Check if the given case was 'upper'.
-	if (strcmp(argv[CASE], UPPER) == 0)
+	
+	int uppers, lowers, c, wishState, curState, state;
+	uppers = lowers = 0;
+	
+	// Count the amount of upper and lower case letters.
+	for(c = *argv[0]; c != EOF && c!= '\0'; c = *++argv[0])
 	{
-		for(c = *argv[STRING] ; c != '\0' && c != EOF ; c = *++argv[STRING])
-
-			//correct the case and print. This will only catch letters that are in the wrong case.
-			putchar((isLower(c) ? (c - DIFF) : c));
-	}
-	// 'lower'case given.
-	else if (strcmp(argv[CASE], LOWER) == 0)
-	{
-		for(c = *argv[STRING] ; c != '\0' && c != EOF ; c = *++argv[STRING])
-			putchar((isUpper(c) ? (c + DIFF) : c));
-	}
-	else
-	{
-		printf("Invalid case %s.", argv[CASE]);
+		state = isUpper(c);
+		uppers += state;		// increment uppers if char is uppercase.
+		lowers += 1 - state; 	// do not increment lowers is chare is uppercase.
 	}
 
-	printf("\n\n");
+	wishState = (uppers > lowers ? 1 : 0); 	// A binary flag for conversion checking.
+	
+	// Print the string in the correct case.
+	for(c = *argv[STRING]; c != EOF && c!= '\0'; c = *++argv[STRING])
+	{
+		
+		// Get the case state for the current char.
+		curState = isUpper(c);
+		
+		// Correct it accordingly.
+		if(wishState != curState)
+		{
+			c += (curState == 1 ? -1 * DIFF : DIFF); // if uppercase deduct, otherwise add.
+		}
+		
+		putchar(c);
+	}
+	
+	// NULL-terminate the string.
+	putchar('\0');
 }

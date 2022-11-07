@@ -4,38 +4,35 @@
 //	This program gets a float value from input and prints it.
 
 #include <ctype.h>
+#include <stdlib.h>
 #include <stdio.h>
-
-/*Noam's comments
-getfloat doesn't return anything.
-and program doesn't get inputs like getint is.
-*/
 
 int getch(void);
 void ungetch(int);
-void getFloat(float*);
+int getFloat(float*);
 
 int main()
 {
-	float flt;
+	float flt = 0.0;
 	getFloat(&flt);
 	printf("%f\n", flt);
 }
 
 /* getFloat: get the next float from input into *pn. */
-void getFloat(float *pn)
+int getFloat(float *pn)
 {
 	int c, sign;
 	*pn = 0;
 
-	// Get rid of whitespace.
+	// Get rid of whitespace.	
 	while (isspace(c = getch()))
 		;
 
 	// Not a number.
-	if (!isdigit(c) && c != EOF && c!= '+' && c != '-' && c!= '.')
+	if (!isdigit(c) && c != EOF && c!= '+' && c != '-')
 	{
 		ungetch(c);
+		return 0;
 	}
 
 	sign = (c == '-') ? -1 : 1;
@@ -62,4 +59,6 @@ void getFloat(float *pn)
 	}
 	else if (c != EOF)
 		ungetch(c);
+	
+	return c;
 } 
