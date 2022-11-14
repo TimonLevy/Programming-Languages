@@ -1,3 +1,10 @@
+// 4.C
+//
+// Programmer:      Daniel L.
+// Date:            13/11/22
+//
+// This program takes an input and displays it on a message Box with the buttons 'OK' and 'Cancel'.
+
 #include <windows.h>
 #include <stdio.h>
 

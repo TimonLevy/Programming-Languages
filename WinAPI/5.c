@@ -1,3 +1,10 @@
+// 5.C
+// 
+// Programmer:      Daniel L.
+// Date:            13/11/22
+//
+// This program takes a path as a parameter and copies 24 of it's first bytes into a new file.
+
 #include <windows.h>
 #include <stdio.h>
 #include <tchar.h>
