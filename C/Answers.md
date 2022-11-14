@@ -19,6 +19,7 @@ In the last attempt and sigint was sent (^Z or Ctrl + Z) which is an EOF char an
 Hence when given normal characters (getchar() == EOF) would print 0, and when given EOF it would print one. If the operator was to be != then the result would be inverted.
 ```
 
+
 #### 10.
 
 | No.   | Allergy           |
@@ -40,7 +41,8 @@ Hence when given normal characters (getchar() == EOF) would print 0, and when gi
 | 12    | 7 types of grass  |
 | 13    | Dust              |
 
-#### 11.
+
+#### 10.
 As of [14/11/2022]:
 
 1 BC = 57284.48 ILS
@@ -57,3 +59,17 @@ Electricity cost is 0.5172 ILS per kWH.
 * 1x    in middle class.
 
 The profitability of the Me'amen facility would be [-16.69] ILD per day.
+
+
+#### 11.
+The difference between *sizeof* and *strlen* is that they serve a completely different purpose.
+
+**sizeof** returns the size (in bytes) of a given type or instance's type, if you would give it a string (either a char pointer or char array) it wouldn't work as it would try to calculate the size of the pointers (that they represent) or array elements.
+
+```
+char* str = "This is a string"; // This ASCII string occupies 17 BYTES.
+int sz = sizeof(str);           // Returns 8 becasue a (char *) is 8 bytes long.
+```
+
+**strlen** returns the length (in characters) of a given string, if you would feed it a string (either an array or a pointer) it would simply just return it's length. You may then use it to calculate the size in bytes of the string.
+*Note*: strlen does not count the `NULL-Terminator ('\0')`.
