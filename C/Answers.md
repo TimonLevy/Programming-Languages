@@ -1,7 +1,8 @@
-# C Section
-## Answers.md
+# C
 
-##### 1.
+### Answers
+
+#### 1.
 ![Image1](https://github.com/TimonLevy/Programming-Languages/blob/5004e38554d474532f2f20437d505e987e242198/C/Ex1.png)
 ![image2](https://github.com/TimonLevy/Programming-Languages/blob/5004e38554d474532f2f20437d505e987e242198/C/Ex2.png)
 ```
@@ -17,3 +18,24 @@ In the last attempt and sigint was sent (^Z or Ctrl + Z) which is an EOF char an
 
 Hence when given normal characters (getchar() == EOF) would print 0, and when given EOF it would print one. If the operator was to be != then the result would be inverted.
 ```
+
+#### 10.
+
+| No.   | Allergy           |
+| --    | --                |
+|       | **Nuts**          |
+| 1     | Walnuts           |
+| 2     | Pecans            |
+| 3     | Peanuts           |
+| 4     | Pine Nut          |
+|       | **Fruit**         |
+| 5     | Melon             |
+| 6     | Watermelon        |
+| 7     | Kiwi              |
+| 8     | Dragonfruit       |
+| 9     | Avocado           |
+|       | **Miscellaneous** |
+| 10    | MSG               |
+| 11    | Mold              |
+| 12    | 7 types of grass  |
+| 13    | Dust              |
