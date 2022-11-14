@@ -101,7 +101,7 @@ int main(int argc, char* argv[])
 
     // Write to the new file.
     res = WriteFile(
-        newFileHandle,                             /* hFile: A handle to the file. */
+        newFileHandle,                          /* hFile: A handle to the file. */
         arr,                                    /* lpBuffer: A buffer that contains the bytes to write. */
         bytesToRead,                            /* nNumberOfBytesToRead: The amount of bytes to write to the file. */
         bytesWritten,                           /* lpNumberOfBytesRead: The amount of bytes written. */
