@@ -39,3 +39,21 @@ Hence when given normal characters (getchar() == EOF) would print 0, and when gi
 | 11    | Mold              |
 | 12    | 7 types of grass  |
 | 13    | Dust              |
+
+#### 11.
+As of [14/11/2022]:
+
+1 BC = 57284.48 ILS
+Electricity cost is 0.5172 ILS per kWH.
+
+24x Me'amen computers   [i5-6500k]
+* 20x   in classes.
+* 3x    in middle class.
+* 1x    in 5th class.
+
+24x Internet computers  [i3-10300]
+* 20x   in classes.
+* 3x    in 5th class.
+* 1x    in middle class.
+
+The profitability of the Me'amen facility would be [-16.69] ILD per day.
