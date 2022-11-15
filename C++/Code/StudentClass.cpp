@@ -78,15 +78,17 @@ class Teacher
 		unsigned int m_teacherEvilness;
 
 		const uint m_minEvil = 0;
-		const uint m_maxEvil = 1000;
+		const uint m_maxEvil = 100;
+		const uint m_teacherGoodnessThreshold = 40;
 
 	public:
 
 		Teacher(const char* newName, const char* newClass)
 		{
+			srand(time(NULL));
 			m_teacherName = newName;
 			m_teacherClass = newClass;
-			m_teacherEvilness = (rand()%1001);
+			m_teacherEvilness = (rand()%100 + 1);
 			m_teacherEvilness = clamp(m_teacherEvilness, m_minEvil, m_maxEvil);
 		}
 
@@ -124,21 +126,28 @@ class Teacher
 		// Gambling is good kids.
 		void rollEvilness()
 		{
-		    m_teacherEvilness = (rand()%1000 + 1);
+			srand(time(NULL));
+		   	m_teacherEvilness = (rand()%100 + 1);
 			m_teacherEvilness = clamp(m_teacherEvilness, m_minEvil, m_maxEvil);
 		}
 
 		// Give the student a grade based on the evilness score.
 		void gradeStudent(Student* s)
 		{
+		    srand(time(NULL));
 			unsigned int newScore = 0;
-
-			newScore = (m_teacherEvilness / 10000) ^ 10;
             
-			if (m_teacherEvilness > 950)
+			if ( m_teacherEvilness < m_teacherGoodnessThreshold )
+			{
+			    newScore = rand()%(s->m_maxGrade - m_teacherEvilness) + (m_teacherGoodnessThreshold / m_teacherEvilness);
+			    cout << newScore << '\n';
+			    
 				s->setGrade(newScore);
+		    }
+			else if ( m_teacherEvilness == 0 )
+				s->setGrade(100);
 			else
-				s->setGrade(0);;
+				s->setGrade(0);
 		}
 
 		// Get the evil value of the teacher.
@@ -149,13 +158,11 @@ class Teacher
 };
 
 int main()
-{
-    srand(time(NULL));
-    
+{    
 	Student student1("Bruhniel lamo", "Not Physics");
-	Student student2("Noam the not orange cool guy", "Physics", 60);
+	Student student2("Noam the not orange cool guy", "Physics", 100);
 
-	Teacher teacher1("Hamore hanazit shel noam", "Physics", 1000);
+	Teacher teacher1("Hamore hanazit shel noam", "Physics");
 
 	std::cout << "Name: " << student1.getName() << "\nClass: " << student1.getClass() << "\nGrade: " << student1.getGrade() << "\n\n";
 	std::cout << "Name: " << student2.getName() << "\nClass: " << student2.getClass() << "\nGrade: " << student2.getGrade() << "\n\n";
