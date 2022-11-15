@@ -12,7 +12,7 @@
 #define minArgs     2
 #define pathIndex   1
 #define bytesToRead 24
-#define newFilePath "C:\\Users\\Cyber-Administrator\\Desktop\\Daniel - Repo\\WinAPI\\5-new.txt"
+#define newFilePath "C:\\Users\\Cyber-Administrator\\Desktop\\Daniel - Repo\\WinAPI\\5\\5-new.txt"
 
 int fileExists(TCHAR* a);
 

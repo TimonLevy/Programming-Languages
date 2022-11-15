@@ -1,6 +1,6 @@
-#include "BruhnieLib.h"
 #include <stdio.h>
 #include <TCHAR.h>
+#include "BruhnieLib.h"
 
 #define BUFFERSIZE		100
 
@@ -20,10 +20,10 @@ void printInput()
 		;
 	inputBuffer[i] = '\0';
 
-	_tprintf(inputBuffer);
+	printf(inputBuffer);
 }
 
 void printWelcome()
 {
-	_tprintf(TEXT("WELCOME DUDESSSSS"));
+	printf("WELCOME DUDESSSSS\n");
 }
