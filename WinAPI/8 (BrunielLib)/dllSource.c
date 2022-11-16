@@ -1,9 +1,16 @@
+#include <windows.h>
 #include <stdio.h>
-#include <TCHAR.h>
-#include "BruhnieLib.h"
+#include "Bruhniel.h"
 
 #define BUFFERSIZE		100
 
+BOOL APIENTRY DllMain(
+   HANDLE hModule,	   // Handle to DLL module 
+   DWORD ul_reason_for_call, 
+   LPVOID lpReserved )     // Reserved
+{
+   return TRUE;
+}
 
 // printfInput
 // 
