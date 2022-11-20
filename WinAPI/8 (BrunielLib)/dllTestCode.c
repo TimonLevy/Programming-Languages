@@ -1,9 +1,10 @@
 #include "Bruhniel.h"
 #include <windows.h>
 
+//#pragma comment( lib, "libBruhniel.lib" )
 // gcc DllTest.c -LlbruhnieLib -o DllTest
 
-typedef void (*function) (void);
+typedef void (__stdcall *function)();
 
 int main()
 {
